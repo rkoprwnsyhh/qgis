@@ -1,17 +1,17 @@
 <!doctype html>
 <html lang="en">
-       <head>
-	<meta name="description"  content="Tugas Webgis Enricho Prawansyah Tunggal" />
-	<meta name="keywords"  content="Peta Webgis" />
-	<meta charset="utf-8">
+    <head>
+        <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <link rel="stylesheet" href="./resources/ol.css">
+        <link rel="stylesheet" type="text/css" href="resources/horsey.min.css">
+        <link rel="stylesheet" type="text/css" href="resources/ol3-search-layer.min.css">
         <link rel="stylesheet" href="./resources/ol3-layerswitcher.css">
         <link rel="stylesheet" href="./resources/qgis2web.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
         <style>
         html, body {
             background-color: #ffffff;
@@ -20,11 +20,11 @@
 
         <style>
         .geolocate {
-            top: 65px;
+            top: 100px;
             left: .5em;
         }
         .ol-touch .geolocate {
-            top: 80px;
+            top: 130px;
         }
         </style>
 <style>
@@ -61,88 +61,24 @@
   border-top-color: #ffcc33;
 }
 .measure-control {
-  top: 100px;
+  top: 135px;
   left: .5em;
 }
 .ol-touch .measure-control {
-  top: 130px;
+  top: 180px;
 }
 </style>
         <style>
-        html, body {
+        html, body, #map {
             width: 100%;
             height: 100%;
             padding: 0;
             margin: 0;
         }
-        /* Ternyata ada style html, body, dan #map juga di qgis2web.css,
-        inilah mengapa heightnya 100% terus... ternyata */
-        #map {
-            width: 100%;
-            position: absolute;
-            top: 49px;
-            /* height: 92%; */
-            bottom: 2px;
-            padding: 0;
-            margin: 0;
-        }
         </style>
-
-        <link href="resources/bootstrap.min.css" rel="stylesheet">
-        <title>Tugas Webgis Enricho Prawansyah Tunggal</title>
-	    
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-122965748-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-122965748-1');
-</script>
-	    
+        <title></title>
     </head>
     <body>
-	
-	  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <div class="container">
-            <a class="navbar-brand" href="https://github.com/rkoprwnsyhh/qgis"> <img id="logo" alt="Logo" src="logo.png" width="25" height="25">nricho Prawansyah Tunggal</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="https://rkoprwnsyhh.github.io/qgis">Home
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="https://github.com/rkoprwnsyhh/qgis" target="_blank">Code</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="https://mailto:rikoprawansyaht@gmail.com" target="_blank">Mail Me</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="https://kecamatanbara.blogspot.com/2020/07/letak-geografis-kecamatan-bara-pada.html" target="_blank">websiteku</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="https://api.whatsapp.com/send?phone=6285253603653" target="_blank">Contact</a>
-            </li>
-	      <li class="nav-item dropdown">
-		<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		  Populasi
-		</a>
-		<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-		  <a class="dropdown-item" href="#">Ruang Kelas</a>
-		  <a class="dropdown-item" href="#">Siswa</a>
-		  <div class="dropdown-divider"></div>
-		  <a class="dropdown-item" href="#">Pendidik</a>
-		</div>
-	      </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
         <div id="map">
             <div id="popup" class="ol-popup">
                 <a href="#" id="popup-closer" class="ol-popup-closer"></a>
@@ -153,14 +89,14 @@
         <script src="resources/polyfills.js"></script>
         <script src="./resources/functions.js"></script>
         <script src="./resources/ol.js"></script>
+        <script src="http://cdn.polyfill.io/v2/polyfill.min.js?features=Element.prototype.classList,URL"></script>
+        <script src="resources/horsey.min.js"></script>
+        <script src="resources/ol3-search-layer.min.js"></script>
         <script src="./resources/ol3-layerswitcher.js"></script>
-        <script src="layers/datavektorbaraSungaiany_0.js"></script><script src="layers/datavektorbaraPulauany_1.js"></script><script src="layers/datavektorbaraPantaiany_2.js"></script><script src="layers/datavektorbaralainany_3.js"></script><script src="layers/datavektorbaraKota_Kecamatanany_4.js"></script><script src="layers/datavektorbaraKecamatanany_5.js"></script><script src="layers/datavektorbaraKampungany_6.js"></script><script src="layers/datavektorbaraJalan_Arteriany_7.js"></script><script src="layers/datavektorbaraJalanKolektorany_8.js"></script><script src="layers/datavektorbaraBatasWilayahany_9.js"></script><script src="layers/datars_10.js"></script>
-        <script src="styles/datavektorbaraSungaiany_0_style.js"></script><script src="styles/datavektorbaraPulauany_1_style.js"></script><script src="styles/datavektorbaraPantaiany_2_style.js"></script><script src="styles/datavektorbaralainany_3_style.js"></script><script src="styles/datavektorbaraKota_Kecamatanany_4_style.js"></script><script src="styles/datavektorbaraKecamatanany_5_style.js"></script><script src="styles/datavektorbaraKampungany_6_style.js"></script><script src="styles/datavektorbaraJalan_Arteriany_7_style.js"></script><script src="styles/datavektorbaraJalanKolektorany_8_style.js"></script><script src="styles/datavektorbaraBatasWilayahany_9_style.js"></script><script src="styles/datars_10_style.js"></script>
+        <script src="layers/kecamatanbarabylurahsalin_0.js"></script><script src="layers/DAFTARTK_1.js"></script>
+        <script src="styles/kecamatanbarabylurahsalin_0_style.js"></script><script src="styles/DAFTARTK_1_style.js"></script>
         <script src="./layers/layers.js" type="text/javascript"></script> 
         <script src="./resources/qgis2web.js"></script>
         <script src="./resources/Autolinker.min.js"></script>
-        <script src="./resources/jquery.min.js"></script>
-        <script src="./resources/bootstrap.bundle.min.js"></script>
-
     </body>
 </html>

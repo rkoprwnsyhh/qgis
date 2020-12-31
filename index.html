@@ -1,49 +1,125 @@
-<!DOCTYPE html>
-<html  >
-<head>
-  <!-- Site made with Mobirise Website Builder v5.2.0, https://mobirise.com -->
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Mobirise v5.2.0, mobirise.com">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-  <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
-  <meta name="description" content="">
-  
-  
-  <title>Home</title>
-  <link rel="stylesheet" href="assets/web/assets/mobirise-icons2/mobirise2.css">
-  <link rel="stylesheet" href="assets/tether/tether.min.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
-  <link rel="stylesheet" href="assets/dropdown/css/style.css">
-  <link rel="stylesheet" href="assets/socicon/css/styles.css">
-  <link rel="stylesheet" href="assets/theme/css/style.css">
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-  
-  
-  
-  
-</head>
-<body>
- <!-- tag audio -->
-    <audio src="music/Backsound.mp3" autoplay="autoplay"></audio>
+<!doctype html>
+<html lang="en">
+       <head>
+	<meta name="description"  content="Tugas Webgis Enricho Prawansyah Tunggal" />
+	<meta name="keywords"  content="Peta Webgis" />
+	<link rel="icon" href="https://spasialkan.com/wp-content/uploads/2018/03/Logo-Spasialkan-2018-Peta-Digital-dan-Webgis-Yogyakarta-Indonesia.png" type="image/x-icon"/>
+	<link rel="shortcut icon" href="https://spasialkan.com/wp-content/uploads/2018/03/Logo-Spasialkan-2018-Peta-Digital-dan-Webgis-Yogyakarta-Indonesia.png" type="image/x-icon"/>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="./resources/ol.css">
+        <link rel="stylesheet" href="./resources/ol3-layerswitcher.css">
+        <link rel="stylesheet" href="./resources/qgis2web.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+        <style>
+        html, body {
+            background-color: #ffffff;
+        }
+        </style>
+
+        <style>
+        .geolocate {
+            top: 65px;
+            left: .5em;
+        }
+        .ol-touch .geolocate {
+            top: 80px;
+        }
+        </style>
+<style>
+.tooltip {
+  position: relative;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  color: white;
+  padding: 4px 8px;
+  opacity: 0.7;
+  white-space: nowrap;
+}
+.tooltip-measure {
+  opacity: 1;
+  font-weight: bold;
+}
+.tooltip-static {
+  background-color: #ffcc33;
+  color: black;
+  border: 1px solid white;
+}
+.tooltip-measure:before,
+.tooltip-static:before {
+  border-top: 6px solid rgba(0, 0, 0, 0.5);
+  border-right: 6px solid transparent;
+  border-left: 6px solid transparent;
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  margin-left: -7px;
+  left: 50%;
+}
+.tooltip-static:before {
+  border-top-color: #ffcc33;
+}
+.measure-control {
+  top: 100px;
+  left: .5em;
+}
+.ol-touch .measure-control {
+  top: 130px;
+}
+</style>
+        <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        /* Ternyata ada style html, body, dan #map juga di qgis2web.css,
+        inilah mengapa heightnya 100% terus... ternyata */
+        #map {
+            width: 100%;
+            position: absolute;
+            top: 49px;
+            /* height: 92%; */
+            bottom: 2px;
+            padding: 0;
+            margin: 0;
+        }
+        </style>
+
+        <link href="resources/bootstrap.min.css" rel="stylesheet">
+        <title>Sample WebGIS Spasialkan.com</title>
+	    
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-122965748-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-122965748-1');
+</script>
+	    
+    </head>
+    <body>
 	
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+	  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-            <a class="navbar-brand" href="https://rkoprwnsyhh.github.io/qgis"> Enricho Prawansyah Tunggal</a>
+        <a class="navbar-brand" href="https://rifkifau.github.io/tutorial/qgis2web-ol"> <img id="logo" alt="Logo" src="logo.png" width="25" height="25">rifkifau</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="https://rkoprwnsyhh.github.io/qgis">Home
+              <a class="nav-link" href="https://rifkifau.github.io/tutorial/qgis2web-ol">Home
                 <span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://github.com/rkoprwnsyhh/qgis" target="_blank">Code</a>
+              <a class="nav-link" href="https://github.com/rifkifau/tutorial/tree/master/qgis2web-ol" target="_blank">Code</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="https://mailto:rikoprawansyaht@gmail.com" target="_blank">Mail Me</a>
@@ -52,198 +128,41 @@
               <a class="nav-link" href="https://kecamatanbara.blogspot.com/2020/07/letak-geografis-kecamatan-bara-pada.html" target="_blank">websiteku</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://api.whatsapp.com/send?phone=6281253603653" target="_blank">Contact</a>
+              <a class="nav-link" href="https://api.whatsapp.com/send?phone=6285253603653" target="_blank">Contact</a>
             </li>
 	      <li class="nav-item dropdown">
 		<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		  Populasi
+		  Download Peta Shp
 		</a>
 		<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 		  <a class="dropdown-item" href="#">Ruang Kelas</a>
-		  <a class="dropdown-item" href="#">Siswa</a>
+		  <a class="dropdown-item" href="#">Peta Sebaran</a>
 		  <div class="dropdown-divider"></div>
-		  <a class="dropdown-item" href="#">Pendidik</a>
+		  <a class="dropdown-item" href="#">Jumlah Pendidik</a>
 		</div>
 	      </li>
           </ul>
         </div>
       </div>
     </nav>
-  
-
-</section>
-
-<section class="slider1 cid-seiUvXmusK" id="slider1-o">
-    
-    <div class="carousel slide" id="sek2OibVGx" data-ride="carousel" data-interval="5000">
-        <ol class="carousel-indicators">
-            <li data-slide-to="0" class="active" data-target="#sek2OibVGx"></li>
-            <li data-slide-to="1" data-target="#sek2OibVGx"></li>
-            <li data-slide-to="2" data-target="#sek2OibVGx"></li>
-        </ol>
-        <div class="carousel-inner">
-            <div class="carousel-item slider-image item active">
-                <div class="item-wrapper">
-                    <img class="d-block w-100" src="assets/images/background3.jpg">
-                    
-                    <div class="carousel-caption">
-                        <h5 class="mbr-section-subtitle mbr-fonts-style display-5">
-                            <strong>Potensi Alam Kecamatan Bara</strong>
-                        </h5>
-                        <p class="mbr-section-text mbr-fonts-style display-7">Konservasi Sumber Daya Alam sebagai tujuan investasi di kecamatan Bara</p>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item slider-image item">
-                <div class="item-wrapper">
-                    <img class="d-block w-100" src="assets/images/background5.jpg">
-                    
-                    <div class="carousel-caption">
-                        <h5 class="mbr-section-subtitle mbr-fonts-style display-5">
-                            <strong>Pertanian </strong>
-                        </h5>
-                        <p class="mbr-section-text mbr-fonts-style display-7">Padi merupakan komoditas utama di kecamatan Bara</p>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item slider-image item">
-                <div class="item-wrapper">
-                    <img class="d-block w-100" src="assets/images/background8.jpg">
-                    
-                    <div class="carousel-caption">
-                        <h5 class="mbr-section-subtitle mbr-fonts-style display-5">
-                            <strong>Pariwisata</strong>
-                        </h5>
-                        <p class="mbr-section-text mbr-fonts-style display-7">Kecamatan Bara memaksimalkan potensi sumber daya alam sebagai tujuan destinasi wisata</p>
-                    </div>
-                </div>
+        <div id="map">
+            <div id="popup" class="ol-popup">
+                <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+                <div id="popup-content"></div>
             </div>
         </div>
-        <a class="carousel-control carousel-control-prev" role="button" data-slide="prev" href="#sek2OibVGx">
-            <span class="mobi-mbri mobi-mbri-arrow-prev" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control carousel-control-next" role="button" data-slide="next" href="#sek2OibVGx">
-            <span class="mobi-mbri mobi-mbri-arrow-next" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
-</section>
-
-<section class="content2 cid-sek26S2sYK" id="content2-y">
-    
-    
-    <div class="container">
-        <div class="mbr-section-head">
-            <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"><strong>Kecamatan Bara</strong></h4>
-            <h5 class="mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-2 display-5">Melayani Setulus Hati</h5>
-        </div>
-        <div class="row mt-4">
-            <div class="item features-image сol-12 col-md-6 col-lg-4">
-                <div class="item-wrapper">
-                    <div class="item-img">
-                        <img src="assets/images/product5.jpg" alt="" title="">
-                    </div>
-                    <div class="item-content">
-                        <h5 class="item-title mbr-fonts-style display-5"><a href="#top" class="text-primary">Covid19</a></h5>
-                        <h6 class="item-subtitle mbr-fonts-style mt-1 display-7">
-                            <strong>Update kasus</strong><em> </em></h6>
-                        <p class="mbr-text mbr-fonts-style mt-3 display-7">Perkembangan terkini terkait kasus Covid19 di kecamatan bara</p>
-                    </div>
-                    <div class="mbr-section-btn item-footer mt-2"><a href="" class="btn item-btn btn-primary display-7" target="_blank">Read More
-                            &gt;</a></div>
-                </div>
-            </div>
-            <div class="item features-image сol-12 col-md-6 col-lg-4">
-                <div class="item-wrapper">
-                    <div class="item-img">
-                        <img src="assets/images/product4.jpg" alt="" title="">
-                    </div>
-                    <div class="item-content">
-                        <h5 class="item-title mbr-fonts-style display-5"><a href="/qgis/peta.html" class="text-primary">PETA</a></h5>
-                        <h6 class="item-subtitle mbr-fonts-style mt-1 display-7"><strong>
-                                Sebaran TK/PAUD </strong></h6>
-                        <p class="mbr-text mbr-fonts-style mt-3 display-7">Peta penyebaran TK/PAUD sekacamatan Bara, Klik untuk mendapatkan info terkini dengan tampilan interaktif <br>
-                        </p>
-                    </div>
-                    <div class="mbr-section-btn item-footer mt-2"><a href="/qgis/peta.html" class="btn btn-primary item-btn display-7" target="_blank">Klik disini
-                            &gt;</a></div>
-                </div>
-            </div>
-            <div class="item features-image сol-12 col-md-6 col-lg-4">
-                <div class="item-wrapper">
-                    <div class="item-img">
-                        <img src="assets/images/product3.jpg" alt="" title="">
-                    </div>
-                    <div class="item-content">
-                        <h5 class="item-title mbr-fonts-style display-5"><a href="#top" class="text-primary">Pengumuman</a></h5>
-                        <h6 class="item-subtitle mbr-fonts-style mt-1 display-7"><strong>Laporan APBD 2019</h6>
-                        <p class="mbr-text mbr-fonts-style mt-3 display-7">laporan pertanggung jawaban Anggaran Pendapatan dan Belanja Daerah (APBD) tahun 2019</p>
-                    </div>
-                    <div class="mbr-section-btn item-footer mt-2"><a href="" class="btn btn-primary item-btn display-7" target="_blank">Klik disini
-                            &gt;</a></div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<section class="footer2 cid-sek2dJWSie" once="footers" id="footer2-10">
-
-    
-    
-    <div class="container">
-        <div class="row mbr-white">
-            <div class="col-6 col-md-4 col-lg-3">
-                <h5 class="mbr-section-subtitle mbr-fonts-style mb-2 display-7">
-                    <strong>Source</strong>
-                </h5>
-                <ul class="list mbr-fonts-style display-4">
-                    <li class="mbr-text item-wrap">data fiktif</li>
-                    <li class="mbr-text item-wrap">hanya</li>
-                    <li class="mbr-text item-wrap">tugas</li>
-                    <li class="mbr-text item-wrap">kuliah</li>
-                </ul>
-            </div>
-            <div class="col-6 col-md-4 col-lg-3">
-                <h5 class="mbr-section-subtitle mbr-fonts-style mb-2 display-7">
-                    <strong>Penulis</strong>
-                </h5>
-                <ul class="list mbr-fonts-style display-4">
-                    <li class="mbr-text item-wrap">Enricho</li>
-                    <li class="mbr-text item-wrap">Prawansyah</li>
-                    <li class="mbr-text item-wrap">Tunggal</li>
-                </ul>
-            </div>
-            <div class="col-6 col-md-4 col-lg-3">
-                <h5 class="mbr-section-subtitle mbr-fonts-style mb-2 display-7">
-                    <strong>Extensions</strong>
-                </h5>
-                <ul class="list mbr-fonts-style display-4">
-                    <li class="mbr-text item-wrap">Qgis</li>
-                    <li class="mbr-text item-wrap">Notepad++</li>
-                    <li class="mbr-text item-wrap">Google</li>
-                    <li class="mbr-text item-wrap">Dreamweaver</li>
-                </ul>
-            </div>
-            <div class="col-6 col-md-4 col-lg-3">
-                <h5 class="mbr-section-subtitle mbr-fonts-style mb-2 display-7">
-                    <strong>help</strong>
-                </h5>
-                <ul class="list mbr-fonts-style display-4">
-                    <li class="mbr-text item-wrap">Help Center</li>
-                    <li class="mbr-text item-wrap">Forum</li>
-                    <li class="mbr-text item-wrap">whatsapp</li>
-                    <li class="mbr-text item-wrap">Email</li>
-                </ul>
-            </div>
-            
-        </div>
-    </div>
-</section><section style="background-color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; color:#aaa; font-size:12px; padding: 0; align-items: center; display: flex;"><a href="https://mobirise.site/r" style="flex: 1 1; height: 3rem; padding-left: 1rem;"></a><p style="flex: 0 0 auto; margin:0; padding-right:1rem;">&nbsp;</p>
-</section><script src="assets/web/assets/jquery/jquery.min.js"></script>  <script src="assets/popper/popper.min.js"></script>  <script src="assets/tether/tether.min.js"></script>  <script src="assets/bootstrap/js/bootstrap.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/dropdown/js/nav-dropdown.js"></script>  <script src="assets/dropdown/js/navbar-dropdown.js"></script>  <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>  <script src="assets/theme/js/script.js"></script>  
-  <style>.embed-container {position: relative; padding-bottom: 80%; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}</style><div class="embed-container"><small><a href="//www.arcgis.com/apps/Embed/index.html?webmap=9931cec3ac34482dbc7632baa8bdb6eb&extent=119.961,-3.0805,120.3201,-2.893&home=true&zoom=true&scale=true&search=true&searchextent=true&details=true&legend=true&active_panel=details&basemap_gallery=true&disable_scroll=true&theme=light" style="color:#0000FF;text-align:left" target="_blank">Lihat peta lebih besar</a></small><br><iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="enricho covid19 palopo" src="//www.arcgis.com/apps/Embed/index.html?webmap=9931cec3ac34482dbc7632baa8bdb6eb&extent=119.961,-3.0805,120.3201,-2.893&home=true&zoom=true&previewImage=false&scale=true&search=true&searchextent=true&details=true&legend=true&active_panel=details&basemap_gallery=true&disable_scroll=true&theme=light"></iframe></div>
-  
-</body>
+        <script src="resources/qgis2web_expressions.js"></script>
+        <script src="resources/polyfills.js"></script>
+        <script src="./resources/functions.js"></script>
+        <script src="./resources/ol.js"></script>
+        <script src="./resources/ol3-layerswitcher.js"></script>
+        <script src="layers/datavektorbaraSungaiany_0.js"></script><script src="layers/datavektorbaraPulauany_1.js"></script><script src="layers/datavektorbaraPantaiany_2.js"></script><script src="layers/datavektorbaralainany_3.js"></script><script src="layers/datavektorbaraKota_Kecamatanany_4.js"></script><script src="layers/datavektorbaraKecamatanany_5.js"></script><script src="layers/datavektorbaraKampungany_6.js"></script><script src="layers/datavektorbaraJalan_Arteriany_7.js"></script><script src="layers/datavektorbaraJalanKolektorany_8.js"></script><script src="layers/datavektorbaraBatasWilayahany_9.js"></script><script src="layers/datars_10.js"></script>
+        <script src="styles/datavektorbaraSungaiany_0_style.js"></script><script src="styles/datavektorbaraPulauany_1_style.js"></script><script src="styles/datavektorbaraPantaiany_2_style.js"></script><script src="styles/datavektorbaralainany_3_style.js"></script><script src="styles/datavektorbaraKota_Kecamatanany_4_style.js"></script><script src="styles/datavektorbaraKecamatanany_5_style.js"></script><script src="styles/datavektorbaraKampungany_6_style.js"></script><script src="styles/datavektorbaraJalan_Arteriany_7_style.js"></script><script src="styles/datavektorbaraJalanKolektorany_8_style.js"></script><script src="styles/datavektorbaraBatasWilayahany_9_style.js"></script><script src="styles/datars_10_style.js"></script>
+        <script src="./layers/layers.js" type="text/javascript"></script> 
+        <script src="./resources/qgis2web.js"></script>
+        <script src="./resources/Autolinker.min.js"></script>
+        <script src="./resources/jquery.min.js"></script>
+        <script src="./resources/bootstrap.bundle.min.js"></script>
+<style>.embed-container {position: relative; padding-bottom: 80%; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}</style><div class="embed-container"><iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="riko prawansyah" src="//learngis3.maps.arcgis.com/apps/Embed/index.html?webmap=98ffb54b96c041c78fc29e26c4b905e9&extent=119.8431,-3.1325,120.5613,-2.8554&zoom=true&previewImage=false&scale=true&disable_scroll=true&theme=light"></iframe></div>
+    </body>
 </html>
